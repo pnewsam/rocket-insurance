@@ -1,4 +1,5 @@
 import React from "react";
+import NewQuoteForm from "./components/NewQuoteForm";
 import "./App.css";
 
 function App() {
@@ -7,6 +8,7 @@ function App() {
       <header>
         <h1>Rocket Insurance</h1>
       </header>
+      <NewQuoteForm></NewQuoteForm>
     </div>
   );
 }
