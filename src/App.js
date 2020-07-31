@@ -4,8 +4,6 @@ import RatingInformationPage from "./pages/RatingInformationPage";
 import QuoteOverviewPage from "./pages/QuoteOverviewPage";
 import Store from "./state/store";
 
-import "./App.css";
-
 const App = () => (
   <Router>
     <Store>
