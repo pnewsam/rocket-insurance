@@ -1,10 +1,41 @@
+:root {
+  --font-family__mulish: "Mulish", sans-serif;
+  --color__space-cadet: #2d3047;
+  --color__raisin-black: #202132;
+  --color__earth-yellow: #e0a458;
+  --color__bronze: #cf8626;
+  --color__white: #fff;
+}
+
 body {
+  background-color: var(--color__space-cadet);
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: var(--font-family__mulish);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2 {
+  font-weight: 800;
+  font-style: italic;
+}
+
+.button,
+.button:active,
+.button:focus {
+  border: none;
+  background-color: var(--color__earth-yellow);
+  color: var(--color__white);
+}
+
+.button:hover {
+  color: var(--color__white);
+  background-color: var(--color__bronze);
+}
+
+.card {
+  border-radius: 4px;
 }
 
 code {

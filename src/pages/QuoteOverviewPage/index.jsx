@@ -1,8 +1,13 @@
+/** @jsx jsx */
+/** @jsxFrag React.Fragment */
+import { jsx } from "@emotion/core";
 import React, { useContext } from "react";
 import { Redirect } from "react-router-dom";
 import { Context } from "../../state";
 import EditQuoteForm from "../../components/EditQuoteForm";
+import MainNav from "../../components/MainNav";
 import { formatCurrency } from "../../utils";
+import styles from "./styles";
 
 const QuoteOverviewPage = ({ match }) => {
   const [state] = useContext(Context);
@@ -14,21 +19,20 @@ const QuoteOverviewPage = ({ match }) => {
     quote && quote.premium ? formatCurrency(quote.premium) : "";
 
   return quote ? (
-    <main>
-      <header className="hero is-primary">
-        <div className="hero-body">
-          <div className="container">
-            <h1 className="title is-1">Quote Overview</h1>
+    <>
+      <MainNav></MainNav>
+      <main css={styles.main}>
+        <section className="section">
+          <div className="container card">
+            <div className="card-content">
+              <h1 className="title is-1">Quote Overview</h1>
+              <h2 className="title is-3">Your Premium: {premiumVal}</h2>
+              <EditQuoteForm quote={quote}></EditQuoteForm>
+            </div>
           </div>
-        </div>
-      </header>
-      <section className="section">
-        <div className="container">
-          <h2 className="title is-2">Premium: {premiumVal}</h2>
-          <EditQuoteForm quote={quote}></EditQuoteForm>
-        </div>
-      </section>
-    </main>
+        </section>
+      </main>
+    </>
   ) : (
     <Redirect to="/"></Redirect>
   );
