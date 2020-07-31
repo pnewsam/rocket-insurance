@@ -1,22 +1,21 @@
 import React from "react";
 import NewQuoteForm from "../../components/NewQuoteForm";
+import MainNav from "../../components/MainNav";
 
 const RatingInformationPage = () => (
-  <main>
-    <header className="hero is-primary">
-      <div className="hero-body">
-        <div className="container">
-          <h1 className="title is-1">Rocket Insurance</h1>
+  <>
+    <MainNav></MainNav>
+    <main>
+      <section className="section">
+        <div className="container card">
+          <div className="card-content">
+            <h1 className="title is-1">Rating Information</h1>
+            <NewQuoteForm></NewQuoteForm>
+          </div>
         </div>
-      </div>
-    </header>
-    <section className="section">
-      <div className="container">
-        <h2 className="title is-2">Rating Information</h2>
-        <NewQuoteForm></NewQuoteForm>
-      </div>
-    </section>
-  </main>
+      </section>
+    </main>
+  </>
 );
 
 export default RatingInformationPage;

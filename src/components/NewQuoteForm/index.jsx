@@ -4,6 +4,7 @@ import { jsx } from "@emotion/core";
 import { Redirect } from "react-router-dom";
 import Api from "../../services/Api";
 import { Context, setQuote } from "../../state";
+import { isPresent, isValidPostalCode } from "../../utils";
 import FormField from "../FormField";
 import styles from "./styles";
 
@@ -28,15 +29,11 @@ const NewQuoteForm = () => {
   const [quoteId, setQuoteId] = useState(null);
   const [, dispatch] = useContext(Context);
 
-  const isPresent = (val) => (Boolean(val.length) ? "" : "must be present.");
-  const matchesPostal = (val) =>
-    /^\d{5}$/g.test(val) ? "" : "must be a valid postal code.";
-
   const validationsByField = {
     city: [isPresent],
     line_1: [isPresent],
     line_2: [],
-    postal: [isPresent, matchesPostal],
+    postal: [isPresent, isValidPostalCode],
     region: [isPresent],
     first_name: [isPresent],
     last_name: [isPresent],
@@ -128,7 +125,7 @@ const NewQuoteForm = () => {
       <div className="field">
         <div className="control">
           <input
-            className="button is-success"
+            className="button"
             css={styles.input}
             type="submit"
             value="Submit"

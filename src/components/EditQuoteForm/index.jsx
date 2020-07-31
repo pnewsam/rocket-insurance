@@ -50,7 +50,7 @@ const EditQuoteForm = ({ quote }) => {
           name={name}
         ></VariableOption>
       ))}
-      <button className="button is-success" type="submit">
+      <button className="button" type="submit">
         Update Quote
       </button>
     </form>
